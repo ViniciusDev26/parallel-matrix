@@ -135,11 +135,8 @@ if __name__ == "__main__":
         # List of servers: (host, port)
         servers = [('localhost', 8000), ('localhost', 8001), ('localhost', 8002)]
 
-        result = multiply_matrices(matrix1, matrix2, servers)
+        # Parallel multiplication using servers
+        result_parallel = multiply_matrices(matrix1, matrix2, servers)
+        export_result_pretty(result_parallel, 'result_parallel.txt')
+        print("Parallel result exported to result_parallel.txt")
 
-        export_result_pretty(result, 'result.txt')
-        print("Result exported to result.txt")
-
-        print("Result of matrix multiplication:")
-        for row in result:
-            print(row)
